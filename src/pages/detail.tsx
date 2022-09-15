@@ -13,10 +13,14 @@ overflow: hidden;
 background-color: #ffffff;
 `
 const ReviewCardListWrapper = styled.header`
+margin-top: 50px;
+width: 100%
+`
+
+const ReviewCardListInner = styled.header`
 display: flex;
 align-items: center;
-margin-top: 100px;
-width: 70%
+justify-content: center;
 `
 
 const Wrapper = styled.header`
@@ -34,7 +38,9 @@ const ReviewDetail: React.FC = () => {
                         <SideBar />
                     </SideBarWrapper>
                     <ReviewCardListWrapper>
-                        <Detail />
+                        <ReviewCardListInner>
+                            <Detail />
+                        </ReviewCardListInner>
                     </ReviewCardListWrapper>
                 </Wrapper>
             </BodyWrapper>
