@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { GlobalStyle } from "./style";
 import Top from "./pages/top"
+import ReviewDetail from "./pages/detail"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path={"/"} element={<Top />} />
+            <Route path={"/post/:organizationId"} element={<ReviewDetail />} />
           </Routes>
         </BrowserRouter>
       </WaitInitialize>

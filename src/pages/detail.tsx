@@ -4,16 +4,19 @@ import Header from "../components/Header";
 import SideBar from "../components/SideBar";
 import { BodyWrapper } from "../common/Body"
 import styled from "@emotion/styled";
-import ListWrapper from "../components/ListWrapper";
+import Detail from "../components/ReviewDetail";
 
 const SideBarWrapper = styled.header`
 height: 90vh;
-width : 380px;
+width : 190px;
 overflow: hidden;
 background-color: #ffffff;
 `
 const ReviewCardListWrapper = styled.header`
+display: flex;
+align-items: center;
 margin-top: 100px;
+width: 70%
 `
 
 const Wrapper = styled.header`
@@ -21,8 +24,7 @@ display: flex;
 height: 100%;
 `
 
-
-const Top: React.FC = () => {
+const ReviewDetail: React.FC = () => {
     return (
         <div>
             <Header button={<Button variant="contained">hoge</Button>} />
@@ -32,12 +34,12 @@ const Top: React.FC = () => {
                         <SideBar />
                     </SideBarWrapper>
                     <ReviewCardListWrapper>
-                        <ListWrapper />
+                        <Detail />
                     </ReviewCardListWrapper>
                 </Wrapper>
             </BodyWrapper>
-        </div>
-    );
+        </div >
+    )
 };
 
-export default Top;
+export default ReviewDetail
