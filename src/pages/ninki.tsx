@@ -24,7 +24,7 @@ height: 100%;
 `
 
 
-const Top: React.FC = () => {
+const Ninki: React.FC = () => {
     return (
         <div>
             <Header button={<Button variant="contained">hoge</Button>} />
@@ -44,4 +44,4 @@ const Top: React.FC = () => {
     );
 };
 
-export default Top;
+export default Ninki;

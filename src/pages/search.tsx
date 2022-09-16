@@ -5,6 +5,7 @@ import SideBar from "../components/SideBar";
 import { BodyWrapper } from "../common/Body"
 import styled from "@emotion/styled";
 import ListWrapper from "../components/ListWrapper";
+import { useParams } from "react-router-dom";
 
 const SideBarWrapper = styled.header`
 width : 190px;
@@ -24,12 +25,11 @@ height: 100%;
 `
 
 
-const Top: React.FC = () => {
+const Search: React.FC = () => {
     return (
         <div>
             <Header button={<Button variant="contained">hoge</Button>} />
             <BodyWrapper>
-
                 <Wrapper>
                     <SideBarWrapper>
                         <SideBar />
@@ -38,10 +38,9 @@ const Top: React.FC = () => {
                         <ListWrapper />
                     </ReviewCardListWrapper>
                 </Wrapper>
-
             </BodyWrapper>
         </div>
     );
 };
 
-export default Top;
+export default Search;

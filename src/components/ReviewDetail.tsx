@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Grid } from "@mui/material";
-import tomato from "../resource/vegetable/tomato.jpg";
+import heart from "../resource/heart.jpg";
 import { People } from "./People"
 import { useParams } from "react-router-dom";
 import { Data, DateSet } from "../resource/data"
@@ -80,8 +80,7 @@ export const Detail: React.FC = () => {
             </BeneathWrapper>
             <div style={{
                 display: "flex",
-                justifyContent: "center",
-                marginBottom: "50px"
+                justifyContent: "center"
             }}>
                 <div style={{
                     width: "80%",
@@ -91,7 +90,34 @@ export const Detail: React.FC = () => {
                     }}>
                         <text>購入方法</text>
                     </div>
-                    <text>xxxxxのxxxxで購入できました</text>
+                    <text>{Data[Number(Id) - 1].Buy}</text>
+                </div>
+            </div>
+            <div
+                style={{
+                    display: "flex",
+                    marginLeft: "50px",
+                    marginBottom: "50px"
+                }}>
+                <OverviewImage>
+                    <img
+                        style={{ objectFit: "cover" }}
+                        src={heart}
+                        width={70}
+                        height={70}
+                    />
+                </OverviewImage>
+                <div
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        marginRight: "50px"
+                    }}
+                >
+                    <TextWrapper>
+                        <text fontWeight={"bold"} fontSize={100}>{Data[Number(Id) - 1].Nice}</text>
+                    </TextWrapper>
                 </div>
             </div>
         </DetailInWrapper >
