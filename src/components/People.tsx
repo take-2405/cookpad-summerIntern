@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import tomato from "../resource/tomato.jpg";
+import tomato from "../resource/vegetable/tomato.jpg";
 
 export type PeopleProps = {
     name: string;
@@ -41,7 +41,7 @@ export const People: React.FC<PeopleProps> = (props) => {
                         <OverviewImage>
                             <img
                                 style={{ objectFit: "cover" }}
-                                src={tomato}
+                                src={img}
                                 width={50}
                                 height={50}
                             />
@@ -72,7 +72,7 @@ export const People: React.FC<PeopleProps> = (props) => {
                             <OverviewImage>
                                 <img
                                     style={{ objectFit: "cover" }}
-                                    src={tomato}
+                                    src={img}
                                     width={50}
                                     height={50}
                                 />

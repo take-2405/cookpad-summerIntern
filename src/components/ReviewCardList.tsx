@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Grid } from "@mui/material";
 import ReviewCard from "./ReviewCard"
+import { Data, DateSet } from "../resource/data"
 
 type Material = {
     id: number;
@@ -26,34 +26,27 @@ const ListWrapper = styled.section`
 
 
 
-export const MaterialCardList: React.FC<MaterialListProps> = (props) => {
-    const materialList: Array<Material> = [
-        { id: 1, title: "title", thumbnailId: "thumbnailId", contents: "contents", date: "2021-09-10" },
-        { id: 2, title: "title", thumbnailId: "thumbnailId", contents: "contents", date: "2021-09-10" },
-        { id: 3, title: "title", thumbnailId: "thumbnailId", contents: "contents", date: "2021-09-10" },
-        { id: 4, title: "title", thumbnailId: "thumbnailId", contents: "contents", date: "2021-09-10" },
-        { id: 5, title: "title", thumbnailId: "thumbnailId", contents: "contents", date: "2021-09-10" },
-        { id: 6, title: "title", thumbnailId: "thumbnailId", contents: "contents", date: "2021-09-10" },
-        { id: 7, title: "title", thumbnailId: "thumbnailId", contents: "contents", date: "2021-09-10" },
-        { id: 8, title: "title", thumbnailId: "thumbnailId", contents: "contents", date: "2021-09-10" },
-    ];
+export const MaterialCardList: React.FC = () => {
 
-    const renderMaterial = () => {
-        if (materialList !== undefined) {
-            return (materialList || []).map((material) => (
+    const renderMaterial = (Data: Array<DateSet>) => {
+        if (Data !== undefined) {
+            return (Data || []).map((material) => (
                 <ReviewCard
                     key={material.id}
                     id={material.id}
-                    title={material.title}
-                    thumbnailId={material.thumbnailId}
-                    contexts={material.contents}
+                    category={material.category}
+                    userName={material.userName}
+                    userImage={material.userImage}
+                    image={material.image}
+                    contexts={material.contexts}
                     date={material.date}
+                    overview={material.overview}
                 ></ReviewCard>
             ));
         }
     };
 
-    return <ListWrapper>{renderMaterial()}</ListWrapper>;
+    return <ListWrapper>{renderMaterial(Data)}</ListWrapper>;
 };
 
 export default MaterialCardList;

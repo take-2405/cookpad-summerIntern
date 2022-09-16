@@ -2,22 +2,29 @@ import React, { useEffect, useState } from "react";
 import { Typography, Card, CardContent, CardMedia, Grid } from "@mui/material";
 import styled from "@emotion/styled";
 import { useNavigate } from "react-router-dom";
-import tomato from "../resource/tomato.jpg";
+
+const OverviewImage = styled.div`
+  max-width: 75%;
+  margin-right: 10px;
+`;
 
 export type MaterialProps = {
-    children?: React.ReactNode;
-    id?: number;
-    title?: string;
-    thumbnailId?: string;
-    contexts?: string;
-    date?: string
+    key: number;
+    id: number;
+    category: string;
+    image: string;
+    userName: string;
+    userImage: string;
+    date: string;
+    contexts: string;
+    overview: string;
 };
 
 const CardWrapper = styled.section``;
 
 export const ReviewCard: React.FC<MaterialProps> = (props) => {
     const navigate = useNavigate();
-    const { id, title, thumbnailId, contexts, date } = props;
+    const { key, id, category, image, userName, userImage, date, contexts, overview } = props;
 
     return (
         <Grid item xs={12} md={6} xl={3}>
@@ -32,15 +39,26 @@ export const ReviewCard: React.FC<MaterialProps> = (props) => {
                     <CardMedia
                         component="img"
                         height="120"
-                        image={tomato}
+                        image={image}
                         alt="material thumbnail"
                     />
                     <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                            {title}
-                        </Typography>
+                        <div style={{
+                            display: 'flex',
+                            alignItems: "center"
+                        }}>
+                            <OverviewImage>
+                                <img
+                                    style={{ objectFit: "cover" }}
+                                    src={userImage}
+                                    width={30}
+                                    height={30}
+                                />
+                            </OverviewImage>
+                            <p>{userName}</p>
+                        </div>
                         <Typography variant="body2" color="text.secondary">
-                            {contexts}
+                            {overview}
                         </Typography>
                     </CardContent>
                 </Card>

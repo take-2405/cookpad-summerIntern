@@ -7,13 +7,15 @@ import styled from "@emotion/styled";
 import ListWrapper from "../components/ListWrapper";
 
 const SideBarWrapper = styled.header`
-height: 90vh;
-width : 380px;
+width : 190px;
+height: 90%;
 overflow: hidden;
 background-color: #ffffff;
+position: fixed;
 `
 const ReviewCardListWrapper = styled.header`
 margin-top: 100px;
+margin-left: 190px;
 `
 
 const Wrapper = styled.header`

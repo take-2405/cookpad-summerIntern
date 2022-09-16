@@ -4,6 +4,8 @@ import {
     Typography,
 } from "@mui/material";
 import styled from "@emotion/styled";
+import { SearchAppBar } from "./SearchBar"
+
 type HeaderProps = {
     button?: ReactNode;
 };
@@ -17,12 +19,23 @@ const HeaderWrapper = styled.header`
 `;
 
 export default function Header({ button }: HeaderProps) {
+    const [value, setValue] = React.useState<string>("");
+
+    const handlePressEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === "Enter") {
+        }
+    };
+
     return (
         <HeaderWrapper>
             <Toolbar color="default">
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                     sample
                 </Typography>
+                <SearchAppBar
+                    value={value}
+                    setValue={setValue}
+                    handlePressEnter={handlePressEnter} />
             </Toolbar>
         </HeaderWrapper >
     );

@@ -12,7 +12,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path={"/"} element={<Top />} />
-            <Route path={"/post/:organizationId"} element={<ReviewDetail />} />
+            <Route path={"/post/:Id"} element={<ReviewDetail />} />
           </Routes>
         </BrowserRouter>
       </WaitInitialize>
